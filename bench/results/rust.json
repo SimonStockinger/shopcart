@@ -1,0 +1,21 @@
+{
+  "implementation": "rust",
+  "version": "bench profile (optimized)",
+  "results_ns": {
+    "to_money": 50.886008495381134,
+    "apply_discount": 65.94865640483476,
+    "compute_tax": 54.15638607120029,
+    "build_cart/10": 1917.198391908608,
+    "subtotal/10": 240.9899488365205,
+    "total/10": 387.73544691312213,
+    "render_receipt/10": 3788.951245283019,
+    "build_cart/100": 25639.919445869677,
+    "subtotal/100": 2253.0372145096285,
+    "total/100": 2420.3458339343238,
+    "render_receipt/100": 28989.25234741784,
+    "build_cart/1000": 329475.71895424835,
+    "subtotal/1000": 23062.633486238534,
+    "total/1000": 22966.719723183392,
+    "render_receipt/1000": 283833.59550561797
+  }
+}

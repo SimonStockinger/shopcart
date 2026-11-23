@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.pyc
+
+# Rust build output
+src-rs/target/
+
+# Local Claude Code settings
+.claude/

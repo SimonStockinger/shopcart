@@ -1,5 +1,5 @@
-"""Make the src/ layout importable when running the tests without installing."""
+"""Make the src-py/ layout importable when running the tests without installing."""
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src-py"))

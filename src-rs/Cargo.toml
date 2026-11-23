@@ -1,0 +1,12 @@
+[package]
+name = "shopcart"
+version = "0.1.0"
+edition = "2024"
+description = "Shopping cart with discount codes, regional tax and plain-text receipts"
+
+[dependencies]
+rust_decimal = "1"
+
+[[bench]]
+name = "compare"
+harness = false

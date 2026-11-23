@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="494" viewBox="0 0 760 494" role="img" aria-labelledby="title desc">
+<title id="title">Rust speedup over Python</title>
+<desc id="desc">Python time divided by Rust time for each benchmark case. Higher means Rust is faster.</desc>
+
+<style>
+  .surface { fill: #fcfcfb; }
+  .t1 { fill: #0b0b0b; } .t2 { fill: #52514e; } .mut { fill: #898781; }
+  .grid { stroke: #e1e0d9; stroke-width: 1; }
+  .link { stroke: #c9c8c1; stroke-width: 2; }
+  .py { fill: #2a78d6; } .rs { fill: #eb6834; }
+  .ring { stroke: #fcfcfb; stroke-width: 2; }
+  @media (prefers-color-scheme: dark) {
+    .surface { fill: #1a1a19; }
+    .t1 { fill: #f0efec; } .t2 { fill: #c3c2b7; }
+    .grid { stroke: #2c2c2a; }
+    .link { stroke: #4a4a46; }
+    .py { fill: #3987e5; } .rs { fill: #d95926; }
+    .ring { stroke: #1a1a19; }
+  }
+  text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+</style>
+
+<rect class="surface" width="760" height="494" rx="8"/>
+<text class="t1" x="20" y="30" font-size="16" font-weight="600">Rust speedup over Python</text>
+<text class="t2" x="20" y="50" font-size="12">Python time ÷ Rust time, median of 7 samples · higher = Rust faster</text>
+<line class="grid" x1="170.0" y1="58" x2="170.0" y2="454"/>
+<text class="mut" x="170.0" y="472" font-size="11" text-anchor="middle">0×</text>
+<line class="grid" x1="245.7" y1="58" x2="245.7" y2="454"/>
+<text class="mut" x="245.7" y="472" font-size="11" text-anchor="middle">5×</text>
+<line class="grid" x1="321.4" y1="58" x2="321.4" y2="454"/>
+<text class="mut" x="321.4" y="472" font-size="11" text-anchor="middle">10×</text>
+<line class="grid" x1="397.1" y1="58" x2="397.1" y2="454"/>
+<text class="mut" x="397.1" y="472" font-size="11" text-anchor="middle">15×</text>
+<line class="grid" x1="472.9" y1="58" x2="472.9" y2="454"/>
+<text class="mut" x="472.9" y="472" font-size="11" text-anchor="middle">20×</text>
+<line class="grid" x1="548.6" y1="58" x2="548.6" y2="454"/>
+<text class="mut" x="548.6" y="472" font-size="11" text-anchor="middle">25×</text>
+<line class="grid" x1="624.3" y1="58" x2="624.3" y2="454"/>
+<text class="mut" x="624.3" y="472" font-size="11" text-anchor="middle">30×</text>
+<line class="grid" x1="700.0" y1="58" x2="700.0" y2="454"/>
+<text class="mut" x="700.0" y="472" font-size="11" text-anchor="middle">35×</text>
+<text class="t2" x="160" y="81.0" font-size="12" text-anchor="end">to_money</text>
+<path class="rs" d="M170.0,70.0 H290.0 Q294.0,70.0 294.0,74.0 V80.0 Q294.0,84.0 290.0,84.0 H170.0 Z"><title>to_money: 8.2× faster in Rust</title></path>
+<text class="t1" x="300.0" y="81.0" font-size="12" font-weight="600">8.2×</text>
+<text class="t2" x="160" y="107.0" font-size="12" text-anchor="end">apply_discount</text>
+<path class="rs" d="M170.0,96.0 H389.6 Q393.6,96.0 393.6,100.0 V106.0 Q393.6,110.0 389.6,110.0 H170.0 Z"><title>apply_discount: 14.8× faster in Rust</title></path>
+<text class="t1" x="399.6" y="107.0" font-size="12" font-weight="600">14.8×</text>
+<text class="t2" x="160" y="133.0" font-size="12" text-anchor="end">compute_tax</text>
+<path class="rs" d="M170.0,122.0 H395.8 Q399.8,122.0 399.8,126.0 V132.0 Q399.8,136.0 395.8,136.0 H170.0 Z"><title>compute_tax: 15.2× faster in Rust</title></path>
+<text class="t1" x="405.8" y="133.0" font-size="12" font-weight="600">15.2×</text>
+<text class="t2" x="160" y="159.0" font-size="12" text-anchor="end">build_cart · n=10</text>
+<path class="rs" d="M170.0,148.0 H249.1 Q253.1,148.0 253.1,152.0 V158.0 Q253.1,162.0 249.1,162.0 H170.0 Z"><title>build_cart · n=10: 5.5× faster in Rust</title></path>
+<text class="t1" x="259.1" y="159.0" font-size="12" font-weight="600">5.5×</text>
+<text class="t2" x="160" y="185.0" font-size="12" text-anchor="end">build_cart · n=100</text>
+<path class="rs" d="M170.0,174.0 H227.8 Q231.8,174.0 231.8,178.0 V184.0 Q231.8,188.0 227.8,188.0 H170.0 Z"><title>build_cart · n=100: 4.1× faster in Rust</title></path>
+<text class="t1" x="237.8" y="185.0" font-size="12" font-weight="600">4.1×</text>
+<text class="t2" x="160" y="211.0" font-size="12" text-anchor="end">build_cart · n=1000</text>
+<path class="rs" d="M170.0,200.0 H235.5 Q239.5,200.0 239.5,204.0 V210.0 Q239.5,214.0 235.5,214.0 H170.0 Z"><title>build_cart · n=1000: 4.6× faster in Rust</title></path>
+<text class="t1" x="245.5" y="211.0" font-size="12" font-weight="600">4.6×</text>
+<text class="t2" x="160" y="237.0" font-size="12" text-anchor="end">subtotal · n=10</text>
+<path class="rs" d="M170.0,226.0 H547.1 Q551.1,226.0 551.1,230.0 V236.0 Q551.1,240.0 547.1,240.0 H170.0 Z"><title>subtotal · n=10: 25.2× faster in Rust</title></path>
+<text class="t1" x="557.1" y="237.0" font-size="12" font-weight="600">25.2×</text>
+<text class="t2" x="160" y="263.0" font-size="12" text-anchor="end">subtotal · n=100</text>
+<path class="rs" d="M170.0,252.0 H533.3 Q537.3,252.0 537.3,256.0 V262.0 Q537.3,266.0 533.3,266.0 H170.0 Z"><title>subtotal · n=100: 24.3× faster in Rust</title></path>
+<text class="t1" x="543.3" y="263.0" font-size="12" font-weight="600">24.3×</text>
+<text class="t2" x="160" y="289.0" font-size="12" text-anchor="end">subtotal · n=1000</text>
+<path class="rs" d="M170.0,278.0 H645.5 Q649.5,278.0 649.5,282.0 V288.0 Q649.5,292.0 645.5,292.0 H170.0 Z"><title>subtotal · n=1000: 31.7× faster in Rust</title></path>
+<text class="t1" x="655.5" y="289.0" font-size="12" font-weight="600">31.7×</text>
+<text class="t2" x="160" y="315.0" font-size="12" text-anchor="end">total · n=10</text>
+<path class="rs" d="M170.0,304.0 H493.3 Q497.3,304.0 497.3,308.0 V314.0 Q497.3,318.0 493.3,318.0 H170.0 Z"><title>total · n=10: 21.6× faster in Rust</title></path>
+<text class="t1" x="503.3" y="315.0" font-size="12" font-weight="600">21.6×</text>
+<text class="t2" x="160" y="341.0" font-size="12" text-anchor="end">total · n=100</text>
+<path class="rs" d="M170.0,330.0 H571.2 Q575.2,330.0 575.2,334.0 V340.0 Q575.2,344.0 571.2,344.0 H170.0 Z"><title>total · n=100: 26.8× faster in Rust</title></path>
+<text class="t1" x="581.2" y="341.0" font-size="12" font-weight="600">26.8×</text>
+<text class="t2" x="160" y="367.0" font-size="12" text-anchor="end">total · n=1000</text>
+<path class="rs" d="M170.0,356.0 H647.5 Q651.5,356.0 651.5,360.0 V366.0 Q651.5,370.0 647.5,370.0 H170.0 Z"><title>total · n=1000: 31.8× faster in Rust</title></path>
+<text class="t1" x="657.5" y="367.0" font-size="12" font-weight="600">31.8×</text>
+<text class="t2" x="160" y="393.0" font-size="12" text-anchor="end">render_receipt · n=10</text>
+<path class="rs" d="M170.0,382.0 H272.7 Q276.7,382.0 276.7,386.0 V392.0 Q276.7,396.0 272.7,396.0 H170.0 Z"><title>render_receipt · n=10: 7.0× faster in Rust</title></path>
+<text class="t1" x="282.7" y="393.0" font-size="12" font-weight="600">7.0×</text>
+<text class="t2" x="160" y="419.0" font-size="12" text-anchor="end">render_receipt · n=100</text>
+<path class="rs" d="M170.0,408.0 H296.2 Q300.2,408.0 300.2,412.0 V418.0 Q300.2,422.0 296.2,422.0 H170.0 Z"><title>render_receipt · n=100: 8.6× faster in Rust</title></path>
+<text class="t1" x="306.2" y="419.0" font-size="12" font-weight="600">8.6×</text>
+<text class="t2" x="160" y="445.0" font-size="12" text-anchor="end">render_receipt · n=1000</text>
+<path class="rs" d="M170.0,434.0 H305.1 Q309.1,434.0 309.1,438.0 V444.0 Q309.1,448.0 305.1,448.0 H170.0 Z"><title>render_receipt · n=1000: 9.2× faster in Rust</title></path>
+<text class="t1" x="315.1" y="445.0" font-size="12" font-weight="600">9.2×</text>
+</svg>

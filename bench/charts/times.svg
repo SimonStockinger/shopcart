@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="514" viewBox="0 0 760 514" role="img" aria-labelledby="title desc">
+<title id="title">Time per operation: Python vs Rust</title>
+<desc id="desc">Median time per operation for each case on a logarithmic scale, Python in blue and Rust in orange. Lower is better.</desc>
+
+<style>
+  .surface { fill: #fcfcfb; }
+  .t1 { fill: #0b0b0b; } .t2 { fill: #52514e; } .mut { fill: #898781; }
+  .grid { stroke: #e1e0d9; stroke-width: 1; }
+  .link { stroke: #c9c8c1; stroke-width: 2; }
+  .py { fill: #2a78d6; } .rs { fill: #eb6834; }
+  .ring { stroke: #fcfcfb; stroke-width: 2; }
+  @media (prefers-color-scheme: dark) {
+    .surface { fill: #1a1a19; }
+    .t1 { fill: #f0efec; } .t2 { fill: #c3c2b7; }
+    .grid { stroke: #2c2c2a; }
+    .link { stroke: #4a4a46; }
+    .py { fill: #3987e5; } .rs { fill: #d95926; }
+    .ring { stroke: #1a1a19; }
+  }
+  text { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+</style>
+
+<rect class="surface" width="760" height="514" rx="8"/>
+<text class="t1" x="20" y="30" font-size="16" font-weight="600">Time per operation</text>
+<text class="t2" x="20" y="50" font-size="12">Median, log scale · lower is better · each step on the axis is 10×</text>
+<circle class="py" cx="26" cy="68" r="5"/>
+<text class="t2" x="36" y="72" font-size="12">Python</text>
+<circle class="rs" cx="96" cy="68" r="5"/>
+<text class="t2" x="106" y="72" font-size="12">Rust</text>
+<line class="grid" x1="170.0" y1="78" x2="170.0" y2="474"/>
+<text class="mut" x="170.0" y="492" font-size="11" text-anchor="middle">10 ns</text>
+<line class="grid" x1="263.3" y1="78" x2="263.3" y2="474"/>
+<text class="mut" x="263.3" y="492" font-size="11" text-anchor="middle">100 ns</text>
+<line class="grid" x1="356.7" y1="78" x2="356.7" y2="474"/>
+<text class="mut" x="356.7" y="492" font-size="11" text-anchor="middle">1 µs</text>
+<line class="grid" x1="450.0" y1="78" x2="450.0" y2="474"/>
+<text class="mut" x="450.0" y="492" font-size="11" text-anchor="middle">10 µs</text>
+<line class="grid" x1="543.3" y1="78" x2="543.3" y2="474"/>
+<text class="mut" x="543.3" y="492" font-size="11" text-anchor="middle">100 µs</text>
+<line class="grid" x1="636.7" y1="78" x2="636.7" y2="474"/>
+<text class="mut" x="636.7" y="492" font-size="11" text-anchor="middle">1 ms</text>
+<line class="grid" x1="730.0" y1="78" x2="730.0" y2="474"/>
+<text class="mut" x="730.0" y="492" font-size="11" text-anchor="middle">10 ms</text>
+<text class="t2" x="160" y="101.0" font-size="12" text-anchor="end">to_money</text>
+<line class="link" x1="235.9" y1="97.0" x2="321.2" y2="97.0"/>
+<circle class="rs ring" cx="235.9" cy="97.0" r="5"><title>to_money · Rust: 50.9 ns</title></circle>
+<circle class="py ring" cx="321.2" cy="97.0" r="5"><title>to_money · Python: 417 ns</title></circle>
+<text class="t2" x="160" y="127.0" font-size="12" text-anchor="end">apply_discount</text>
+<line class="link" x1="246.5" y1="123.0" x2="355.6" y2="123.0"/>
+<circle class="rs ring" cx="246.5" cy="123.0" r="5"><title>apply_discount · Rust: 65.9 ns</title></circle>
+<circle class="py ring" cx="355.6" cy="123.0" r="5"><title>apply_discount · Python: 974 ns</title></circle>
+<text class="t2" x="160" y="153.0" font-size="12" text-anchor="end">compute_tax</text>
+<line class="link" x1="238.5" y1="149.0" x2="348.7" y2="149.0"/>
+<circle class="rs ring" cx="238.5" cy="149.0" r="5"><title>compute_tax · Rust: 54.2 ns</title></circle>
+<circle class="py ring" cx="348.7" cy="149.0" r="5"><title>compute_tax · Python: 822 ns</title></circle>
+<text class="t2" x="160" y="179.0" font-size="12" text-anchor="end">build_cart · n=10</text>
+<line class="link" x1="383.0" y1="175.0" x2="452.1" y2="175.0"/>
+<circle class="rs ring" cx="383.0" cy="175.0" r="5"><title>build_cart · n=10 · Rust: 1.92 µs</title></circle>
+<circle class="py ring" cx="452.1" cy="175.0" r="5"><title>build_cart · n=10 · Python: 10.5 µs</title></circle>
+<text class="t2" x="160" y="205.0" font-size="12" text-anchor="end">build_cart · n=100</text>
+<line class="link" x1="488.2" y1="201.0" x2="545.2" y2="201.0"/>
+<circle class="rs ring" cx="488.2" cy="201.0" r="5"><title>build_cart · n=100 · Rust: 25.6 µs</title></circle>
+<circle class="py ring" cx="545.2" cy="201.0" r="5"><title>build_cart · n=100 · Python: 105 µs</title></circle>
+<text class="t2" x="160" y="231.0" font-size="12" text-anchor="end">build_cart · n=1000</text>
+<line class="link" x1="591.7" y1="227.0" x2="653.4" y2="227.0"/>
+<circle class="rs ring" cx="591.7" cy="227.0" r="5"><title>build_cart · n=1000 · Rust: 329 µs</title></circle>
+<circle class="py ring" cx="653.4" cy="227.0" r="5"><title>build_cart · n=1000 · Python: 1.51 ms</title></circle>
+<text class="t2" x="160" y="257.0" font-size="12" text-anchor="end">subtotal · n=10</text>
+<line class="link" x1="299.0" y1="253.0" x2="429.7" y2="253.0"/>
+<circle class="rs ring" cx="299.0" cy="253.0" r="5"><title>subtotal · n=10 · Rust: 241 ns</title></circle>
+<circle class="py ring" cx="429.7" cy="253.0" r="5"><title>subtotal · n=10 · Python: 6.07 µs</title></circle>
+<text class="t2" x="160" y="283.0" font-size="12" text-anchor="end">subtotal · n=100</text>
+<line class="link" x1="389.6" y1="279.0" x2="518.8" y2="279.0"/>
+<circle class="rs ring" cx="389.6" cy="279.0" r="5"><title>subtotal · n=100 · Rust: 2.25 µs</title></circle>
+<circle class="py ring" cx="518.8" cy="279.0" r="5"><title>subtotal · n=100 · Python: 54.6 µs</title></circle>
+<text class="t2" x="160" y="309.0" font-size="12" text-anchor="end">subtotal · n=1000</text>
+<line class="link" x1="483.9" y1="305.0" x2="623.9" y2="305.0"/>
+<circle class="rs ring" cx="483.9" cy="305.0" r="5"><title>subtotal · n=1000 · Rust: 23.1 µs</title></circle>
+<circle class="py ring" cx="623.9" cy="305.0" r="5"><title>subtotal · n=1000 · Python: 730 µs</title></circle>
+<text class="t2" x="160" y="335.0" font-size="12" text-anchor="end">total · n=10</text>
+<line class="link" x1="318.3" y1="331.0" x2="442.8" y2="331.0"/>
+<circle class="rs ring" cx="318.3" cy="331.0" r="5"><title>total · n=10 · Rust: 388 ns</title></circle>
+<circle class="py ring" cx="442.8" cy="331.0" r="5"><title>total · n=10 · Python: 8.38 µs</title></circle>
+<text class="t2" x="160" y="361.0" font-size="12" text-anchor="end">total · n=100</text>
+<line class="link" x1="392.5" y1="357.0" x2="525.7" y2="357.0"/>
+<circle class="rs ring" cx="392.5" cy="357.0" r="5"><title>total · n=100 · Rust: 2.42 µs</title></circle>
+<circle class="py ring" cx="525.7" cy="357.0" r="5"><title>total · n=100 · Python: 64.8 µs</title></circle>
+<text class="t2" x="160" y="387.0" font-size="12" text-anchor="end">total · n=1000</text>
+<line class="link" x1="483.7" y1="383.0" x2="623.9" y2="383.0"/>
+<circle class="rs ring" cx="483.7" cy="383.0" r="5"><title>total · n=1000 · Rust: 23 µs</title></circle>
+<circle class="py ring" cx="623.9" cy="383.0" r="5"><title>total · n=1000 · Python: 730 µs</title></circle>
+<text class="t2" x="160" y="413.0" font-size="12" text-anchor="end">render_receipt · n=10</text>
+<line class="link" x1="410.7" y1="409.0" x2="489.8" y2="409.0"/>
+<circle class="rs ring" cx="410.7" cy="409.0" r="5"><title>render_receipt · n=10 · Rust: 3.79 µs</title></circle>
+<circle class="py ring" cx="489.8" cy="409.0" r="5"><title>render_receipt · n=10 · Python: 26.7 µs</title></circle>
+<text class="t2" x="160" y="439.0" font-size="12" text-anchor="end">render_receipt · n=100</text>
+<line class="link" x1="493.1" y1="435.0" x2="580.4" y2="435.0"/>
+<circle class="rs ring" cx="493.1" cy="435.0" r="5"><title>render_receipt · n=100 · Rust: 29 µs</title></circle>
+<circle class="py ring" cx="580.4" cy="435.0" r="5"><title>render_receipt · n=100 · Python: 249 µs</title></circle>
+<text class="t2" x="160" y="465.0" font-size="12" text-anchor="end">render_receipt · n=1000</text>
+<line class="link" x1="585.6" y1="461.0" x2="675.5" y2="461.0"/>
+<circle class="rs ring" cx="585.6" cy="461.0" r="5"><title>render_receipt · n=1000 · Rust: 284 µs</title></circle>
+<circle class="py ring" cx="675.5" cy="461.0" r="5"><title>render_receipt · n=1000 · Python: 2.61 ms</title></circle>
+</svg>
